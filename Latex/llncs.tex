@@ -1,301 +1,95 @@
 % This is LLNCS.DOC the documentation file of
 % the LaTeX2e class from Springer-Verlag
 % for Lecture Notes in Computer Science, version 2.4
+%%\documentclass{llncs}
+
 \documentclass{llncs}
 \usepackage{llncsdoc}
-%
+\usepackage[english]{babel}
+
 \begin{document}
-\markboth{\LaTeXe{} Class for Lecture Notes in Computer
-Science}{\LaTeXe{} Class for Lecture Notes in Computer Science}
+\markboth{Gestenerkennung in ROS mit Pepper
+}{Gestenerkennung in ROS mit Pepper}
 \thispagestyle{empty}
 \begin{flushleft}
-\LARGE\bfseries Instructions for Authors\\
-Coding with \LaTeX\\[2cm]
+\LARGE\bfseries ISE Master Seminararbeit\\
+in Robotik\\[2cm]
 \end{flushleft}
 \rule{\textwidth}{1pt}
 \vspace{2pt}
 \begin{flushright}
 \Huge
 \begin{tabular}{@{}l}
-Gesture Recognition\\
+Gestenerkennung\\
 in ROS\\
-with Pepper\\[6pt]
+mit Pepper\\[6pt]
 \end{tabular}
 \end{flushright}
 \rule{\textwidth}{1pt}
 \vfill
-\newpage
-%
-\section*{For further information please contact us:}
-%
-\begin{flushleft}
-\begin{tabular}{l@{\quad}l@{\hspace{3mm}}l@{\qquad}l}
-$\bullet$&\multicolumn{3}{@{}l}{\bfseries LNCS Editorial Office}\\[1mm]
-&\multicolumn{3}{@{}l}{Springer-Verlag}\\
-&\multicolumn{3}{@{}l}{Computer Science Editorial}\\
-&\multicolumn{3}{@{}l}{Tiergartenstraße 17}\\
-&\multicolumn{3}{@{}l}{69121 Heidelberg}\\
-&\multicolumn{3}{@{}l}{Germany}\\[0.5mm]
- & Tel:       & +49-6221-487-8706\\
- & Fax:       & +49-6221-487-8588\\
- & e-mail:    & \tt lncs@springer.com    & for editorial questions\\
- &            & \tt texhelp@springer.de & for \TeX{} problems\\[2mm]
-\noalign{\rule{\textwidth}{1pt}}
-\noalign{\vskip2mm}
-%
-%{\tt svserv@vax.ntp.springer.de}\hfil first try the \verb|help|
-%command.
-%
-$\bullet$&\multicolumn{3}{@{}l}{\bfseries We are also reachable through the world wide web:}\\[1mm]
-         &\multicolumn{2}{@{}l}{\texttt{http://www.springer.com}}&Springer Global Website\\
-         &\multicolumn{2}{@{}l}{\texttt{http://www.springer.com/lncs}}&LNCS home page\\
-         &\multicolumn{2}{@{}l}{\texttt{http://www.springerlink.com}}&data repository\\
-         &\multicolumn{2}{@{}l}{\texttt{ftp://ftp.springer.de}}&FTP server
-\end{tabular}
-\end{flushleft}
-
-
 %
 \newpage
 \tableofcontents
 \newpage
 %
-\section{Introduction}
+
+\begin{abstract}
+Die Gestenerkennung ist ein wichtiges Teilgebiet der Mensch-Maschine-Interaktion. Sie soll den Umgang und die Kommunikation von Menschen mit Maschinen verbessern und kommt bereits im Alltag zur Anwendung, beispielsweise bei der Nutzung von Mobiltelefonen oder Spielkonsolen. Im Rahmen dieser Arbeit werden verschiedene Verfahren zur Gestenerkennung vorgestellt und evaluiert. Darüber hinaus wird untersucht, wie gut diese Verfahren auf dem humanoiden Roboter \glqq Pepper\grqq\hspace{1pt} umzusetzen sind.
+
+%Es werden zun\"achst drei Verfahren zur Gestenerkennung vorgestellt. Anschließen%d wird evaluiert, wie gut 
+
+
+
+%% %%Abstract 10-15zeilen: mmi gesten als wichtige modalität gewinnbringend nutzen
+%%  In Hinblick auf die Nutzung von Mensch-Maschine-Interaktion ist die Gestenerkennung eine wichtige Modalit\"at. Sie vereinfacht den Umgang und die Kommunikation von den Menschen mit einer Maschine.  
+\end{abstract}
 %
-Abstract 10-15zeilen: mmi gesten als wichtige modalität gewinnbringend nutzen
-%%
-Authors wishing to code their contribution
-with \LaTeX{}, as well as those who have already coded with \LaTeX{},
-will be provided with a document class that will give the text the
-desired layout. Authors are requested to
-adhere strictly to these instructions; {\em the class
-file must not be changed}.
-
-The text output area is automatically set within an area of
-12.2\,cm horizontally  and 19.3\,cm vertically.
-
-If you are already familiar with \LaTeX{}, then the
-LLNCS class should not give you any major difficulties.
-It will change the layout to the required LLNCS style
-(it will for instance define the layout of \verb|\section|).
-We had to invent some extra commands,
-which are not provided by \LaTeX{} (e.g.\
-\verb|\institute|, see also Sect.\,\ref{contbegin})
+\section{Introduction}
+In der heutigen Zeit, wo Arbeitspl\"atze, die unter anderem auch die interaktion mit Menschen beinhalten, durch humanoide Roboter ersetzt werden, gewinnt die Mensch-Maschine-Interaktion mehr an Bedeutung. Die Verfahren m\"ussen sicher und fehlerfrei funktionieren, um den Betrieb am laufen zu halten. Damit die Bedienung der Roboter vereinfacht wird, kann Gestensteuerung gewinnbringend genutzt werden.
 %
 \section{Gestensteuerung}
-%
-The LLNCS class is an extension of the standard \LaTeX{} ``article''
-document class. Therefore you may use all ``article'' commands for the
-body of your contribution to prepare your manuscript.
-LLNCS class is invoked by replacing ``article'' by ``llncs'' in the
-first line of your document:
-\begin{verbatim}
-\documentclass{llncs}
-%
-\begin{document}
-  <Your contribution>
-\end{document}
-\end{verbatim}
-%
+Hier kommt die Begründung hin, warum gestensteuerung benutzt wird
+Anhand von Gesten k\"onnen Roboter gesteuert werden. Dadurch kann die interaktion im Alltag erleichtert werden. 
+% warum gestensteuerung
+%% warum gestenerkennung 
 \section{Pepper}
-Hier kommen zum Beispiel die technischen Daten von Pepper hin. 
--> was kann pepper, was braucht man (eingabedatenkanäle ) hautfarbe, 2d, 3d andere sensoren?
+ was kann pepper, was braucht man (eingabedatenkan\"ale ) hautfarbe, 2d, 3d andere sensoren?
+\begin{itemize}
+\item ca 1,20m gro\ss{} und 30kg schwer
+\item vier Mikrofone, zwei RGB-Kameras und ein 3D-Sensor im Kopf
+\item Gyrosensor im Torso
+\item Ber\"uhrungssensoren in Kopf und H\"anden
+\item Fu\ss{}bereich enth\"alt 2 Sonarsensoren, 6 Laserscanner, 3 Sto\ss{}f\"angersensoren und einen weiteren Gyrosensor.
+\end{itemize}
 \section{Verfahren zu Gestenerkennung}
-%
-Hier folgen drei Verfahren zur Gestenerkennung.
- → verfahren, wenn mehere dann evaluiren, was passt zu szenario
-	zielszenario: nur formen, oder bewegte gesten über zeit.
-	warum gestenerkennung
+In diesen Kapitel folgen drei Verfahren zur Gestenerkennung.
+%% → verfahren, wenn mehere dann evaluieren, was passt zu szenario
+%%	zielszenario: nur formen, oder bewegte gesten \"uber zeit.
+
 \subsection{Gestenerkennung durch KOMSM}
-KOMSM
+Hier wird das KOMSM Verfahren vorgestellt.
 \subsection{Gestenerkennung mit Tiefensensor}
-aa
+Hier wird das Gestenerkennung mit Tiefensensor Verfahren vorgestellt.
 \subsection{Gestenerkennung durch neuronale Netzwerke}
-lll
-%
+Hier wird die Gestenerkennung durch neuronale Netzwerke vorgestellt.
 \section{Fazit}
-Alles sehr toll.
-\section{References}
-\label{refer}
-%
-There are three reference systems available; only one, of course,
-should be used for your contribution. With each system (by
-number only, by letter-number or by author-year) a reference list
-containing all citations in the
-text, should be included at the end of your contribution placing the
-\LaTeX{} environment \verb|thebibliography| there.
-For an overall information on that environment
-see the {\em \LaTeX{} User's Guide \& Reference
-Manual\/} by Leslie Lamport, p.~71.
-
-There is a special {\sc Bib}\TeX{} style for LLNCS that works along
-with the class: \verb|splncs.bst|
--- call for it with a line \verb|\bibliographystyle{splncs}|.
-If you plan to use another {\sc Bib}\TeX{} style you are customed to,
-please specify the option \verb|[oribibl]| in the
-\verb|documentclass| line, like:
-\begin{verbatim}
-\documentclass[oribibl]{llncs}
-\end{verbatim}
-This will retain the original \LaTeX{} code for the bibliographic
-environment and the \verb|\cite| mechanism that many {\sc Bib}\TeX{}
-applications rely on.
-%
-\subsection{References by Letter-Number or by Number Only}
-%
-References are cited in the text -- using the \verb|\cite|
-command of \LaTeX{} -- by number or by letter-number in square
-brackets, e.g.\ [1] or [E1, S2], [P1], according to your use of the
-\verb|\bibitem| command in the \verb|thebibliography| environment. The
-coding is as follows: if you choose your own label for the sources by
-giving an optional argument to the \verb|\bibitem| command the citations
-in the text are marked with the label you supplied. Otherwise a simple
-numbering is done, which is preferred.
-\begin{verbatim}
-The results in this section are a refined version
-of \cite{clar:eke}; the minimality result of Proposition~14
-was the first of its kind.
-\end{verbatim}
-The above input produces the citation: ``\dots\ refined version of
-[CE1]; the min\-i\-mality\dots''. Then the \verb|\bibitem| entry of
-the \verb|thebibliography| environment should read:
-\begin{verbatim}
+Verfahren xy eignet sich in dieser Situation am meisten.
+\newpage
 \begin{thebibliography}{[MT1]}
-.
-.
-\bibitem[CE1]{clar:eke}
-Clarke, F., Ekeland, I.:
-Nonlinear oscillations and boundary-value problems for
-Hamiltonian systems.
-Arch. Rat. Mech. Anal. 78, 315--333 (1982)
-.
-.
+\bibitem[Kin]{Kinect}
+Gu, Y., Do, H., Ou, Y., Sheng, W.:
+Human Gesture Recognition through a Kinect Sensor
+2014 IEEE-RAS International Conference on Humanoid Robots (2014)
+\bibitem[Nea]{Neuronal}
+Barros P, Parisi G., Jirak D., Wermter S.:
+Real-time Gesture Recognition Using a Humanoid Robot with a Deep Neural Architecture 2014 IEEE-RAS International Conference on Humanoid Robots (2014)
+\bibitem[Pep0]{Pepper}
+Lafaye J.,Gouaillier D., Wieber P.:
+Linear model predictive control of the locomotion of Pepper, a humanoid robot with omnidirectional wheels 2014 IEEE-RAS International Conference on Humanoid Robots
+\bibitem[Pep1]{Pepper2}
+Tanaka, F.,Isshiki K., Takahashi F.,Uekusa M., Sei R., Hayashi K.:
+Pepper learns together with children: Development of an educational application 2015 IEEE-RAS 15th International Conference on Humanoid Robots (Humanoids)
+%http://ieeexplore.ieee.org/document/7363546/#
 \end{thebibliography}
-\end{verbatim}
-The complete bibliography looks like this:
-%
-\begin{thebibliography}{[MT1]}
-%
-\bibitem[CE1]{clar:eke}
-Clarke, F., Ekeland, I.:
-Nonlinear oscillations and
-boundary-value problems for Hamiltonian systems.
-Arch. Rat. Mech. Anal. 78, 315--333 (1982)
-%
-\bibitem[CE2]{clar:eke:2}
-Clarke, F., Ekeland, I.:
-Solutions p\'{e}riodiques, du
-p\'{e}riode donn\'{e}e, des \'{e}quations hamiltoniennes.
-Note CRAS Paris 287, 1013--1015 (1978)
-%
-\bibitem[MT1]{mich:tar}
-Michalek, R., Tarantello, G.:
-Subharmonic solutions with prescribed minimal
-period for nonautonomous Hamiltonian systems.
-J. Diff. Eq. 72, 28--55 (1988)
-%
-\bibitem[Ta1]{tar}
-Tarantello, G.:
-Subharmonic solutions for Hamiltonian
-systems via a $\bbbz_{p}$ pseudoindex theory.
-Annali di Matematica Pura (to appear)
-%
-\bibitem[Ra1]{rab}
-Rabinowitz, P.:
-On subharmonic solutions of a Hamiltonian system.
-Comm. Pure Appl. Math. 33, 609--633 (1980)
-\end{thebibliography}
-%
-\subsubsection*{Number-Only System.}
-%
-For this preferred system do not use the optional argument
-in the \verb|\bibitem| command: then, only numbers will
-appear for the citations in the text (enclosed in square brackets)
-as well as for the marks in your
-bibliography (here the number is only end-punctuated without
-square brackets).
 
-Subsequent citation numbers in the text are collapsed to ranges.
-Non-numeric and undefined labels are handled correctly but no sorting is
-done.
-
-E.g., \verb|\cite{n1,n3,n2,n3,n4,n5,foo,n1,n2,n3,?,n4,n5}| -- where
-\verb|n|$x$ is the key of the $x^{\mathrm{th}}$ \verb|\bibitem|
-command in sequence, \verb|foo| is the key of a \verb|\bibitem| with an
-optional argument, and \verb|?| is an undefined reference -- gives
-1,3,2-5,foo,1-3,?,4,5 as the citation reference.
-
-\begin{verbatim}
-\begin{thebibliography}{1}
-\bibitem {clar:eke}
-Clarke, F., Ekeland, I.:
-Nonlinear oscillations and boundary-value problems for
-Hamiltonian systems.
-Arch. Rat. Mech. Anal. 78, 315--333 (1982)
-\end{thebibliography}
-\end{verbatim}
-%
-\subsection{Author-Year System}
-%
-References are cited in the text by name and year in parentheses
-and should look as follows:
-(Smith 1970, 1980), (Ekeland et al. 1985, Theorem 2), (Jones and Jaffe
-1986; Farrow 1988, Chap.\,2). If the name is part of the sentence
-only the year may appear in parentheses,
-e.g.\ Ekeland et al. (1985, Sect.\,2.1)
-The reference list should contain all citations occurring in the text,
-ordered alphabetically by surname (with initials following). If there
-are several works by the same author(s) the references should be listed
-in the appropriate order indicated below:
-\begin{alpherate}
-\setlength{\hfuzz}{5pt}
-\item
-One author: list works chronologically;
-\item
-Author and same co-author(s): list works chronologically;
-\item
-Author and different co-authors: list works alphabetically
-according to co-authors.
-\end{alpherate}
-If there are several works by the same author(s) and in the same year,
-but which are cited separately, they should be distinguished by the use
-of ``a'', ``b'' etc., e.g.\ (Smith 1982a), (Ekeland et al. 1982b).
-%
-\subsubsection*{How to Code Author-Year System.}
-%
-If you want to use this system you have to specify the option
-\verb|[citeauthoryear]| in the \verb|documentclass|, like:
-\begin{verbatim}
-\documentclass[citeauthoryear]{llncs}
-\end{verbatim}
-Write your citations in the text explicitly except for the year, leaving
-that up to \LaTeX{} with the \verb|\cite| command. Then give only the
-appropriate year as the optional argument (i.e. the label in square
-brackets) with the \verb|\bibitem| command(s).\\[2mm]
-{\itshape Sample Input}
-\begin{verbatim}
-The results in this section are a refined version
-of Clarke and Ekeland (\cite{clar:eke}); the minimality result of
-Proposition~14 was the first of its kind.
-\end{verbatim}
-The above input produces the citation: ``\dots\ refined version of
-Clarke and Ekeland (1982); the minimality\dots''. Then the
-\verb|\bibitem| entry of \verb|clar:eke| in the \verb|thebibliography|
-environment should read:
-\begin{verbatim}
-\begin{thebibliography}{}  % (do not forget {})
-.
-.
-\bibitem[1982]{clar:eke}
-Clarke, F., Ekeland, I.:
-Nonlinear oscillations and boundary-value problems for
-Hamiltonian systems.
-Arch. Rat. Mech. Anal. 78, 315--333 (1982)
-.
-.
-\end{thebibliography}
-\end{verbatim}
-{\itshape Sample Output}
-\bibauthoryear
-%
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.10.18)  29 NOV 2017 10:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.10.18)  2 DEC 2017 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -127,84 +127,81 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@solution=\count114
 \c@remark=\count115
 \headlineindent=\dimen123
-) (./llncsdoc.sty) (./llncs.aux)
+) (./llncsdoc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/12/03 3.9h The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/12/03 3.9h Babel common definitions
+\babel@savecnt=\count116
+\U@D=\dimen124
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)) (./llncs.aux)
 \openout1 = `llncs.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 13.
+(Font)              <24.88> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 13.
+(Font)              <20.74> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 19.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 19.
- [1
+(Font)              <17.28> on input line 22.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./llncs.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 29.
+(Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 29.
-Missing character: There is no ß in font cmr10!
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 59.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 59.
- [2] (./llncs.toc)
+(Font)              <5> on input line 2.
+)
 \tf@toc=\write3
 \openout3 = `llncs.toc'.
 
- [3
+ [2
 
 ]
-Missing character: There is no ä in font cmr10!
+Missing character: There is no Ã in font cmr9!
+Missing character: There is no ¼ in font cmr9!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¼ in font cmr10!
 
-
-LaTeX Warning: Reference `contbegin' on page 4 undefined on input line 83.
-
-[4] [5] [6] [7] [8] (./llncs.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[3] [4] [5] (./llncs.aux) ) 
 Here is how much of TeX's memory you used:
- 686 strings out of 493304
- 7617 string characters out of 6139870
- 68506 words of memory out of 5000000
- 4194 multiletter control sequences out of 15000+600000
- 13320 words of font info for 46 fonts, out of 8000000 for 9000
+ 1032 strings out of 493304
+ 12085 string characters out of 6139870
+ 80319 words of memory out of 5000000
+ 4540 multiletter control sequences out of 15000+600000
+ 8814 words of font info for 31 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,8n,21p,228b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on llncs.pdf (8 pages, 191894 bytes).
+ 29i,6n,23p,535b,242s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on llncs.pdf (5 pages, 92949 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 44 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

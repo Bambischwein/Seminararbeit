@@ -1,0 +1,5 @@
+CC = pdflatex
+CFLAGS = --shell-escape
+
+GestureRecognition.pdf:llncs.tex
+	$(CC) $(CCFLAGS) $^

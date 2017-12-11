@@ -1,9 +1,0 @@
-\select@language {english}
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Gestensteuerung}{3}
-\contentsline {section}{\numberline {3}Pepper}{3}
-\contentsline {section}{\numberline {4}Verfahren zu Gestenerkennung}{3}
-\contentsline {subsection}{\numberline {4.1}Gestenerkennung durch KOMSM}{3}
-\contentsline {subsection}{\numberline {4.2}Gestenerkennung mit Tiefensensor}{4}
-\contentsline {subsection}{\numberline {4.3}Gestenerkennung durch neuronale Netzwerke}{4}
-\contentsline {section}{\numberline {5}Fazit}{4}

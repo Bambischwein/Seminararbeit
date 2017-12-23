@@ -1,0 +1,57 @@
+\subsection{Gestenerkennung mit Tiefensensor (Kinect)}
+Hier wird das Gestenerkennung mit Tiefensensor Verfahren vorgestellt. 
+%F\"ur die Durchf\"uhrung muss die Testperson kurze \"Armel tragen und im Hintergrund d\"urfen sich keine hautfarbenen Gegenst\"ande befinden.
+\begin{itemize}
+\item HMM, um die dynamik der Gesten zu erkennen und zu modelieren
+\item 3 Schichten: Detection, Tracking und Recognition
+\subitem Detection und Tracking werden durch Kinect Middleware umgesetzt
+\subitem Diese Arbeit ist auf Klassifikation fokussiert
+\end{itemize}
+III Implementation
+\begin{itemize}
+\item Für dieses Paper wurden 5 Gesten gespeichert(Kommen, Gehen, Winken, Aufstehen, Hinsetzen)
+\subitem Jede Geste wird durch ein HMM encoded
+\item Alle Gesten werden mit dem linken Arm ausgef\"uhrt %(unflexibel) 
+\item 4 joint angles: Ellbogen (yaw and roll), Schulter (yaw and pitch)
+\end{itemize}
+A: Training phase
+\begin{itemize}
+\item Jedes Model wird mit 15 Datensets (20Hz) trainiert
+\item Eine Regel-basierte Methode wird für die Daten-Segmentierung hinzugef\"ugt
+\item Es wird eine Startpose definiert und jedes Datenset besteht aus 30 Datenpunkten nach dem Startpunkt
+\item Jede Geste hat die gleiche Dauer (eineinhalb Sek)
+\item ``K-means clustering'' wird benutzt, um die Vektoren in sichtbare Symbole f\"ur HMM zu konvertieren
+\item Die Zentroiden der k-means werden f\"ur die Testdaten gesichert
+\item Um die Rechenkomplexit\"at auszubalancieren werden die HMM-Parameter gesetzt: Number of States: 30, Number of distinct observation symbols: 6
+\end{itemize}
+B: Recognition Phase
+\begin{itemize}
+\item Es werden die Trainings-HMMs mit 2 verschiedenen Testobjekten getestet 
+\subitem Das Testobjekt, das teilgenommen hat, und eins, das nicht teilgenommen hat
+\item F\"ur real-time processing wird ROS eingesetzt
+\subitem Jede Funktion wird als Node geschrieben, die simultan laufen (Hier werden 3 Nodes genutzt)
+\subitem Image extraction: Liest die Daten aus der Kinect
+\subitem Feature extraction: kreiert das skelett model basierend auf den Bildinformationen
+\subitem  real-time recognition: Buffert die joint angles informationen vom Feature extracion node und kalkuliert danach die Wahrscheinlichkeit der Beobachtungssequenz, die f\"ur jedes Model gegeben ist. Dsa model mit der gr\"ossten Wahrscheinlichkeit bestimmt den Typen des HMM
+\item Um St\"orpunkte loszuwerden und die Fehlalarm-rate zu reduzieren wird zuerst die Varianz des Inputs benutzt, um zu entscheiden, ob es eine Geste ist oder nicht
+\item Danach wird ein Schwellwert für jedes HMM gesetzt
+\item Wenn die Wahrscheinlichkeit kleiner als der Schwellwert ist wird es als St\"orung behandelt
+\end{itemize}
+IV: Experimental Results
+A: Recognition Results
+\begin{itemize}
+\item Bei unterschiedlicher Geschwindigkeit: langsam und normal wurden 4 von 5 erkannt, bei zu schneller Bewegung nur 1 von 5, weil Keypoints nicht schnell genug aufgenomen werden k\"onnen
+\item Solange es einmal detektiert wird, bleibt es als Erkannt klassifiziert
+\item Bearbeitungszeit ist sehr kurz verglichen mit der Datenaufnahme, also gehen dadurch keine Daten verloren
+\item Es kann die gleiche Geste ohne Pause wiederholt werden und sie wird immer erkannt
+\item die benutzen Gesten sind sehr unterschiedlich (wie sieht es dann mit \"ahnlichen Gesten aus?)
+\item Solange der Algorithmus das Skelett anhand der Bilder von der Kamera bilden kann funktioniert die Erkennung
+\end{itemize}
+V: Conclusion and future works
+\begin{itemize}
+\item Einfaches Training: Geste muss nur einmal aufgenommen werden, um erkannt zu werden
+\item System kann von unterschiedlichen Personen trainiert und benutzt werden
+\item Orientierung der Gesten m\"ussen nicht mit den  Orientierungen der aufgenommenen Gesten  \"ubereinstimmen
+\item Geschwindigkeit ist nicht unbedingt relevant, solang es nicht zu schnell ist 
+\item Zukunft: Mehr K\"orperteile und mehr Kinects, Stimmerkennung hinzuf\"ugen und zusammen benutzen
+\end{itemize}

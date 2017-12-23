@@ -1,0 +1,72 @@
+\subsection{Gestenerkennung durch KOMSM}
+Im folgenden wird das ``Kernel Orthogonal Mutual Subspace Method'' (kurz KOMSM) Verfahren vorgestellt. Mit diesem Verfahren werden einzelne Positionen einer Hand detektiert und analysiert. Dabei ist zu beachten, dass keine bewegten Gesten erkannt werden, sondern nur eine Momentaufnahme der Hand beachtet wird. \\
+
+
+I Introduction
+\begin{itemize}
+\item Kinect sensor als Revolution
+\item Vorteil: Geringe Rechenkosten und geringe Anzahl an Parametern, die gesetzt werden müssen
+\item Nachteil: 2 verschiedene Tiefenbilder n\"otig
+\item MSM erweitert durch mehrere nichtlineare Methoden zu (KOMSM)
+\item für jede Klasse aus einer Menge von Tiefenbildern wird eine Referenz erzeugt, die ``Volume Subspace'' genannt
+\item Ähnlichkeit zwischen input Subspace und Volume Subspace wird mit kanonischen Winkeln gemessen (Bild)
+\subitem invariant zu Beleuchtungszustand und Objektfarbe
+\subitem invariant zu Translation und Skalierung des Objekts durch simple Normalisierung von Gr\"oße und Tiefe
+\item Gesten werden in Befehle umgewandelt
+\end{itemize}
+II Vorgeschlagenes Gestenerkennungssystem
+\begin{itemize}
+\item A: Volume subspace
+\subitem Wenn die Nummer der kanonischen betrachteten Winkel gr\"o\ss{}er als 3 ist, ist die 3D-Information des Objektes bereits im Volume Subspace enthalten
+\subitem Vorteil: Beleuchtung egal, da Tiefenbilder nicht drauf angewiesen sind
+\item B: Recognition Based on KOMSM
+\subitem Measurement von 2 Subspaces: 
+\subsubitem subspaces werden durch Kernel PCA generiert
+\subsubitem die Kanonical Winkel von 2 nichtlinearen Subspaces werden benutzt,m um die Gleichheit der Subspaces zu quantifizieren.
+\subsubitem Erkl\"arung der canonical Winkel(Formelkram)
+\subitem Orthogonalität von nichtlinearen Subspaces: 
+\subsubitem Die nichtlinearen Subspaces werden orthogonalisiert, bevor die Kanonischen Winkel angewendet werden.
+\subitem Definition of Similarity
+\subsubitem (Formel)
+\subitem Reduktion von Rechenzeit:
+\subsubitem Nachteil: Rechenzeit wächst im Verhältnis zur Anzahl der Lernmuster
+\subsubitem Um die Komplexität der Rechnung zu reduzieren werden die Lernmuster in k Kluster gepackt, indem k-means benutzt werden und dann die Kernorthogonalisierung wird vom Zentroid der enthaltenen K-Klusters aus berechnet
+\subsubitem Wenn k k kleiner als die Nummer von Lernpattern ist, ist die Rechenzeit deutlich reduziert. 
+\item C: Handdetection
+\subitem In diesem Verfahren werden die Funktionalitäten von ROS und OpenNI benutzt, um das Skelett einer Person zu tracken
+\subitem Position der Hand wird als Pointcloud extrahiert
+\subitem ROS Paket ``MIT Kinect Demos'', modifiziert, damit neben 2 Pointclouds auch das abgeschnittene RGB- und Tiefenbild beider Hände zu erhalten
+\subitem Tiefenbilder werden auf eine Größe von 16x16 Pixel komprimiert, die Tiefenwerte werden normalisiert
+\subitem Das RGB-Bild wird für die Visualisierung benutzt (Kann ich vlt weg lassen)
+\item D: Handgesten Definition:
+\subitem Es wurde ein Set von Gesten entworfen, um den Roboter damit zu kontrollieren
+\subitem Jede Geste hat eine Action-Nummer, wenn der Roboter eine erkennt, wird der entsprechende Befehl an den Roboter gesendet.
+\subitem Wenn man die Hände für die Geste vertauscht, sollte das System den Befehl trotzdem erkennen, muss also doppelt so viele Gesten kennen. Bei so einer Anzahl wird es sehr rechenintensiv und fehleranfällig
+\subsubitem Nur eine kleine Anzahl an Gesten zur Verfügung stellen(Hier 9) plus eine extra Klasse, um Nebeneffekte aus dem Handsegmentierungssystem zu verhindern
+\subitem Damit beide Hände gleich aussehen, wird das Bild der linken Hand horizontal gedreht 
+\subsubitem Somit können n quadrat verschiedene Gesten differenziert werden 
+\subitem Nicht alle Kombinationen haben eine Bedeutung
+\subitem Alle gespeicherten Gesten können in eine Matrix gepackt werden 
+\item E: Roboter-Kontrolle:
+\subitem (Aufbau des Roboters ist hier unwichtig)
+\subitem Aufbau von ROS mit nodes
+\subitem Node, um RGB- und Tiefenbild aufzunehmen, einer um das humane Skelett in Tiefenbild zu erkennen, ...
+\subitem ROS läuft auf einen Desktop PC, der die Befehle über WLAN an den Roboter schickt
+\end{itemize}
+III Ablauf der vorgeschlagenen Methode
+\begin{itemize}
+\item A: Lernphase
+\subitem 1. Referenziere Bilder von n unterschiedlichen Gesten der rechten Hand werden aufgenommen
+\subitem 2. Die Größe und die Tiefenwerte der Referenz-Bilder werden normalisiert
+\subitem 3. Es wird ein Volume Subspace für jeden der n Gesten generiert und gespeichert, indem das KOMSM Netzwerk benutzt wird. 
+\item B: Erkennungsphase
+\subitem 1. Bilder der linken und rechten Hand werden aufgenommen
+\subitem 2. Beide Bilder werden in der Größe normalisiert
+\subitem 3. Aufnahme der linken Hand wird horizontal gedreht
+\subitem 4. Die Tiefenwerte beider Bilder werden normalisiert
+\subitem 5. Volume Subspaces für rechte und linke Hand werden mittels KOMSM erstellt. Kanonische Winkel werden berechnet. 
+\subitem 6. Matrix für die Ähnlichkeit der both-hand Gesten wird aufgestellt.
+\subitem 7. Es werden die beidhändigen Gesten gefunden. 
+\end{itemize}
+IV Experimente
+- Experimente und Fazit des Papers mit einbringen?\newline

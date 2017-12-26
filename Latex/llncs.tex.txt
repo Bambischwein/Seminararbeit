@@ -1,0 +1,61 @@
+\documentclass[graybox]{svmult}
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+%
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+\makeindex
+\begin{document}
+
+\title*{Gestenerkennung in ROS (mit Pepper)}
+\author{Hanna Babilon}
+\maketitle
+
+\abstract{Die Gestenerkennung ist ein wichtiges Teilgebiet der Mensch-Maschine-Interaktion. Sie soll den Umgang und die Kommunikation von Menschen mit Maschinen verbessern und kommt bereits im Alltag zur Anwendung, beispielsweise bei der Nutzung von Mobiltelefonen oder Spielkonsolen. Im Rahmen dieser Arbeit wird zun\"achst die Gestensteuerung erl\"autert und der Roboter Pepper wird vorgestellt. Anschlie{\ss}end werden verschiedene Verfahren zur Gestenerkennung vorgestellt und evaluiert. Diese beinhalten zum Beispiel neuronale Netze oder Tiefenbildaufnahmen. Dar\"uber hinaus wird untersucht, wie gut diese Verfahren auf dem humanoiden Roboter "Pepper" umzusetzen sind und welches sich am besten f\"ur den Einsatz im Alltag eignet.}
+
+%% %%Abstract 10-15zeilen: mmi gesten als wichtige modalität gewinnbringend nutzen
+%%  In Hinblick auf die Nutzung von Mensch-Maschine-Interaktion ist die Gestenerkennung eine wichtige Modalit\"at. Sie vereinfacht den Umgang und die Kommunikation von den Menschen mit einer Maschine.  
+
+\section{Introduction}
+Der vermehrte Einsatz von humanoiden Robotern in Bereichen, in denen mit Menschen agiert wird, gibt der Mensch-Maschine-Interaktion immer mehr Bedeutung. Es wird der Fokus darauf gelegt, dass die Kommunikation zwischen dem Roboter und einem Menschen fehlerfrei funktioniert. Damit die Bedienung der Roboter vereinfacht wird, kann Gestensteuerung gewinnbringend eingesetzt werden. Dabei muss beachtet werden, welche Verfahren es gibt und welche sich am besten eignen. Es kann zum Beispiel auf die Hautfarbe geachtet werden, oder es wird ein Handschuh getragen. Andere Verfahren verwenden Tiefeninformationen, die statisch oder dynamisch verarbeitet werden k\"onnen. Bei allen Verfahren m\"ussen die Gesten vorprogrammiert sein.
+
+%- alte verfahren mit zb Handschuh zu erkennung aufführen und dann sagen, dass dsas zu aufwendig ist und ein verfahren ohne zusatzmaterial gesucht wird.  Literaturverfahren
+% Related work
+
+\section{Gestensteuerung}
+Anhand von Gesten k\"onnen Roboter gesteuert werden. Dadurch kann die Interaktion zwischen Roboter und Mensch im Alltag erleichtert werden \cite{GEST}. Damit auch Menschen, die einen Roboter nicht programmieren k\"onnen, kommunizieren k\"onnen, werden Gesten eingesetzt. Diese kann der Roboter detektieren, analysieren und den entsprechenden Befehl ausf\"uhren. Eine Geste ist eine Bewegung des menschlichen K\"orpers, die Informationen ent\"alt.%%% beweise!!! paper!
+Sie kann mit der Hand \"uber Finger, mit ein oder zwei Armen, oder dem ganzen K\"orper zum Ausdruck gebracht werden. Diese Gesten k\"onnen statisch oder dynamisch sein. Statisc bedeutet, dass eine Momentaufnahme gemacht und anaylsiert wird. Hier werden vorrangig Gesten der Finger benutzt. So kann man zum Beispiel einen oder zwei Finger als verschiedene Gesten zeigen. Bei der dynamischen Geste werden einzelne Frames aus der Kamera ausgelesen und ergeben nach der Analyse eine Geste. Dies kann mit den H\"anden, aber auch mit dem ganzen Arm umgesetzt werden, wie zum Beispiel ein Winken. Um im Alltag eingesetzt zu werden muss die Gestensteuerung in Echtzeit funktionieren. Es darf also keine langen Rechenzeiten oder Aufnahmezeiten von Frames geben. 
+% warum gestensteuerung
+% Was ist das genau? 
+% Welche Arten gibt es und wofür werden sie benutzt?
+%% unterscheidung: dynamisch, statisch
+% stichwort real time
+%% warum gestenerkennung 
+\section{Pepper}
+Im Alltag werden vermehrt Roboter eingesetzt, die mit Menschen interagieren sollen. Sie k\"onnen zusammen mit Kindern \cite{PEP0} eingesetzt werden oder als Verk\"aufe oder Wegweiser in einem Einkaufszentrum \cite{PEP1}. Die Roboter sollen den Menschen Arbeit abnehmen und das Leben angenehmer gestalten. Der Humanoide Roboter "Pepper" wurde zu Bildungszwecken entwickelt, damit die Interaktion zwischen Mensch und Roboter weiter optimiert werden kann. Durch die verschiedenen Sensoren, die in Pepper verbaut sind,  kann der Roboter Pepper sich autonom fortbewegen und Menschen erkennen. Pepper ist 1,20m groß und wiegt 30 kg. Um sich im Raum zu orientieren befinden sich im Fussbereich zwei Sonarsensoren, sechs Laserscanner und ein Gyrosensor. Damit der Roboter mit Menschen in seiner direkten Umgebung kommunizieren können, befinden sich im Kopf vier Mikrofone, zwei RGB-Kameras und ein 3D-Sensor. Mit einer RGB-Kamera k\"onnen K\"orperteile eines Menschen erkannt werden. Über den 3D-Sensor kann zus\"atzlich die Tiefeninformation einer Geste erkannt werden. \\
+
+ %was kann pepper, was braucht man (eingabedatenkan\"ale ) hautfarbe, 2d, 3d andere sensoren?
+\section{Verfahren zur Gestensteuerung}
+Im folgenden werden verschiedene Verfahren der Gestenerkennung vorgestellt. Zuerst wird ein Verfahren vorgestellt, dass mit neuronalen Netzen arbeitet. Als zweites werden verschiedene Verfahren vorgestellt, die auf Tiefenbildern basieren.
+\subsection{Gestenerkennung durch neuronale Netzwerke}
+Durch den Fortschritt der Erforschung von neuronalen Netzen k\"onnen diese mittlerweile in vielen Gebieten benutzt werden. Auch in der Erkennung von Gesten findet dieses Verfahren bereits Anwendung. 
+%\subsection{Gestenerkennung durch KOMSM}
+%\include{Verfahren/KOMSM}
+%\include{Verfahren/Tiefensensor}
+%\include{Verfahren/LeapMotionAndKinect}
+%\include{Verfahren/dynamischeHandgesten}
+%\include{Fazit}
+\newpage
+\input{referenc}
+\end{document}
